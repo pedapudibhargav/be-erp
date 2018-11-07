@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+/* Name space from Customer Model app/Customers.php*/
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -13,6 +15,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        return Customer::all();
         //
     }
 
@@ -34,7 +37,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required'
+        ]);
+        return $request->all();
     }
 
     /**
@@ -45,6 +53,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
+        return Customer::find($id);
         //
     }
 

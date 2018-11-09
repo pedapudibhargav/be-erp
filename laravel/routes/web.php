@@ -18,4 +18,10 @@ Route::get('/hello', function () {
     return 'Hellow welcome to your first route';
 });
 
-Route:: resource('customer','CustomerController');
+
+Route::group(['middleware' => 'cors'], function()
+{
+    //Route:: resource('customer','CustomerController');
+
+    Route:: resource('customer','CustomerController');
+});

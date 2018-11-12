@@ -17,8 +17,8 @@ class Products extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('sku')->unique();
-            $table->string('weight');
-            $table->string('unit');
+            $table->string('weight_of_unit');
+            $table->string('units_in_stock');
             $table->timestamps();
         });
     }

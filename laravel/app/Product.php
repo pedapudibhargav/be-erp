@@ -9,6 +9,6 @@ class Product extends Model
     //
     protected $name;
     protected $sku;
-    protected $weight;
-    protected $unit;
+    protected $weight_of_unit;
+    protected $unit_in_stock;
 }

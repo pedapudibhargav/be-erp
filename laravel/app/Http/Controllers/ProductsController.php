@@ -40,8 +40,8 @@ class ProductsController extends Controller
         $product = new Product;
         $product->name = $request ->input("name");
         $product->sku = $request ->input("sku");
-        $product->weight = $request ->input("weight");
-        $product->unit = $request ->input("unit");
+        $product->weight_of_unit = $request ->input("weight_of_unit");
+        $product->units_in_stock = $request ->input("units_in_stock");
         $product->save();
         return $request->all();
     }
